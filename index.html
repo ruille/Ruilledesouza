@@ -1,90 +1,130 @@
 
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Descubra o significado do nome Ruille, um nome de origem brasileira associado a histórias intrigantes e significados profundos.">
-    <meta name="keywords" content="Ruille, significado do nome, origem, história, senhor da guerra, senhor da paz">
-    <meta name="author" content="Ruille de Souza">
-    <title>Ruille</title>
+    <title>Mensagens Anônimas com Mídia</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* fundo preto */
+            color: #fff; /* texto branco */
             margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            margin: 10px 0;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1, h2 {
-            color: #333;
-        }
-        p {
-            line-height: 1.6;
-            color: #555;
-        }
-        footer {
-            background: #333;
-            color: #fff;
+
+        h1 {
+            color: #ff3d00; /* vermelho */
             text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
+        }
+
+        input[type="text"], input[type="file"], textarea {
             width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ff3d00; /* vermelho */
+            border-radius: 5px;
+            background-color: #1e1e1e; /* fundo escuro */
+            color: #fff; /* texto branco */
+        }
+
+        button {
+            background-color: #ff3d00; /* vermelho */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+
+        button:hover {
+            background-color: #e63900; /* vermelho mais escuro */
+        }
+
+        #messagesContainer {
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #1e90ff; /* azul */
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #1e1e1e; /* fundo escuro */
+        }
+
+        .message {
+            border: 1px solid #1e90ff; /* azul */
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #2a2a2a; /* fundo cinza escuro */
+        }
+
+        .media {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Nome Ruille</h1>
-        <nav>
-            <a href="#significado">Significado</a>
-            <a href="#criador">Sobre o Criador</a>
-            <a href="#opiniao">Opiniões</a>
-        </nav>
-    </header>
+    <h1>Envie uma Mensagem Anônima</h1>
+    <input type="text" id="username" placeholder="Seu Nome (opcional)">
+    <textarea id="message" placeholder="Sua Mensagem"></textarea>
+    <input type="file" id="mediaInput" accept="image/*,video/*">
+    <button id="sendBtn">Enviar</button>
+    <div id="messagesContainer"></div>
 
-    <div class="container">
-        <h2 id="significado">Significado do Nome Ruille</h2>
-        <p>O significado do nome Ruille vem de origem brasileira, por uma mãe negra do ano de 2004, ao nascer um garoto chamado "Ruille". Há relatos que envolvem a criação de vírus, desaparecimento de pessoas e uma rede social muito famosa, da qual muitas pessoas ainda são viciadas até hoje. O nome ficou conhecido como o "senhor da guerra".</p>
-        <p>Pós esse nome, ocorreram vários desastres, incluindo tsunamis e massacres em escolas, principalmente guerras na Europa em alguns países. Mas fique tranquilo, pois, embora tenha ouvido sobre guerra no "Haiti", as tropas brasileiras enviaram soldados para lá, e o nome Ruille também é considerado como "senhor da paz" 🕊️.</p>
-        
-        <h2 id="criador">Sobre o Criador</h2>
-        <p>Nome: Ruille de Souza</p>
-        <p>Idade: 20 anos</p>
-        <p>Cidade: Manaus</p>
+    <script>
+        const sendBtn = document.getElementById('sendBtn');
+        const messagesContainer = document.getElementById('messagesContainer');
 
-        <h2 id="opiniao">Deixe sua Opinião sobre o Nome Ruille</h2>
-        <p>Compartilhe sua opinião através deste <a href="https://docs.google.com/forms/d/e/1FAIpQLScT0Wgf1juiAD2Gbs9x0NPq4pdlpu4RTaUC3e34T2fGouFjzg/viewform?usp=header" target="_blank">formulário</a>.</p>
-    </div>
+        sendBtn.addEventListener('click', () => {
+            const username = document.getElementById('username').value || 'Anônimo';
+            const message = document.getElementById('message').value;
+            const mediaInput = document.getElementById('mediaInput');
+            const mediaFile = mediaInput.files[0];
 
-    <footer>
-        <p>&copy; 2023 Ruille de Souza. Todos os direitos reservados.</p>
-        <p>Entre em contato: ruille@example.com</p>
-    </footer>
+            if (message.trim() !== '' || mediaFile) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                
+                // Adiciona texto da mensagem
+                if (message.trim() !== '') {
+                    messageElement.textContent = `${username}: ${message}`;
+                }
+
+                // Adiciona mídia se houver
+                if (mediaFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const mediaElement = document.createElement(mediaFile.type.startsWith('video') ? 'video' : 'img');
+                        mediaElement.src = e.target.result;
+                        mediaElement.classList.add('media');
+                        mediaElement.controls = mediaFile.type.startsWith('video');
+                        messageElement.appendChild(mediaElement);
+                    };
+                    reader.readAsDataURL(mediaFile);
+                }
+
+                messagesContainer.appendChild(messageElement);
+
+                // Limpa os campos após enviar
+                document.getElementById('message').value = '';
+                mediaInput.value = '';
+
+                // Configura um timer para remover a mensagem após 1 hora (3600000 ms)
+                setTimeout(() => {
+                    messagesContainer.removeChild(messageElement);
+                }, 3600000);
+            } else {
+                alert('Por favor, digite uma mensagem ou selecione um arquivo!');
+            }
+        });
+    </script>
 </body>
 </html>
