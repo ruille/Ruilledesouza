@@ -1,130 +1,241 @@
-
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensagens Anônimas com Mídia</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212; /* fundo preto */
-            color: #fff; /* texto branco */
-            margin: 0;
-            padding: 20px;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Currículo de Ruille de Souza e Souza</title>
+<style>
+  /* Fonte do Google Fonts: Poppins */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
-        h1 {
-            color: #ff3d00; /* vermelho */
-            text-align: center;
-        }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #d0e8ff, #a5c9ff);
+    margin: 0;
+    padding: 20px;
+    color: #022c5a;
+    line-height: 1.6;
+  }
 
-        input[type="text"], input[type="file"], textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ff3d00; /* vermelho */
-            border-radius: 5px;
-            background-color: #1e1e1e; /* fundo escuro */
-            color: #fff; /* texto branco */
-        }
+  .container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(2,44,90,0.15);
+    padding: 30px 40px;
+    transition: box-shadow 0.3s ease;
+  }
+  .container:hover {
+    box-shadow: 0 25px 50px rgba(2,44,90,0.25);
+  }
 
-        button {
-            background-color: #ff3d00; /* vermelho */
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            display: block;
-            margin: 0 auto;
-        }
+  header {
+    border-left: 8px solid #0073e6;
+    padding-left: 15px;
+    margin-bottom: 30px;
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #004a99;
+    letter-spacing: 1px;
+  }
 
-        button:hover {
-            background-color: #e63900; /* vermelho mais escuro */
-        }
+  .contact-info {
+    background: #eaf4ff;
+    border-radius: 8px;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 0 10px #c0d7ff;
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #00509e;
+  }
+  .contact-info p {
+    margin: 0;
+  }
 
-        #messagesContainer {
-            margin-top: 20px;
-            max-height: 400px;
-            overflow-y: auto;
-            border: 1px solid #1e90ff; /* azul */
-            border-radius: 5px;
-            padding: 10px;
-            background-color: #1e1e1e; /* fundo escuro */
-        }
+  h2 {
+    color: #00509e;
+    font-weight: 600;
+    font-size: 1.75rem;
+    border-bottom: 2px solid #0073e6;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
+  h3 {
+    color: #0073e6;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
 
-        .message {
-            border: 1px solid #1e90ff; /* azul */
-            border-radius: 5px;
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #2a2a2a; /* fundo cinza escuro */
-        }
+  p, li {
+    font-weight: 300;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+  }
 
-        .media {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-    </style>
+  ul {
+    padding-left: 20px;
+  }
+
+  .buttons {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .button {
+    background: linear-gradient(45deg, #ff9800, #fb8500);
+    color: white;
+    padding: 12px 28px;
+    margin: 8px 6px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(251, 133, 0, 0.4);
+    transition: all 0.3s ease;
+    user-select: none;
+    letter-spacing: 0.03em;
+  }
+  .button:hover {
+    background: linear-gradient(45deg, #fb8500, #ff6f00);
+    box-shadow: 0 8px 20px rgba(251, 133, 0, 0.6);
+    transform: translateY(-4px) scale(1.05);
+  }
+
+  .button-pdf {
+    background: linear-gradient(45deg, #00bcd4, #0097a7);
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.5);
+  }
+  .button-pdf:hover {
+    background: linear-gradient(45deg, #0097a7, #007c91);
+    box-shadow: 0 10px 25px rgba(0, 188, 212, 0.8);
+  }
+
+  /* Responsividade */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+      font-size: 16px;
+    }
+    .container {
+      padding: 20px 15px;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+    }
+    .contact-info {
+      flex-direction: column;
+      gap: 5px;
+      font-size: 0.9rem;
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 0.95rem;
+    }
+  }
+</style>
 </head>
 <body>
-    <h1>Envie uma Mensagem Anônima</h1>
-    <input type="text" id="username" placeholder="Seu Nome (opcional)">
-    <textarea id="message" placeholder="Sua Mensagem"></textarea>
-    <input type="file" id="mediaInput" accept="image/*,video/*">
-    <button id="sendBtn">Enviar</button>
-    <div id="messagesContainer"></div>
 
-    <script>
-        const sendBtn = document.getElementById('sendBtn');
-        const messagesContainer = document.getElementById('messagesContainer');
+<div class="container" id="curriculo">
+  <header>
+    <h1>Currículo de Ruille de Souza e Souza</h1>
+  </header>
 
-        sendBtn.addEventListener('click', () => {
-            const username = document.getElementById('username').value || 'Anônimo';
-            const message = document.getElementById('message').value;
-            const mediaInput = document.getElementById('mediaInput');
-            const mediaFile = mediaInput.files[0];
+  <div class="contact-info">
+    <p>📱 WhatsApp: <a href="https://wa.me/92981279375" target="_blank" style="color:#00509e; text-decoration:none;">92981-279375</a></p>
+    <p>✉️ Email: <a href="mailto:ruille20@gmail.com" style="color:#00509e; text-decoration:none;">ruille20@gmail.com</a></p>
+  </div>
 
-            if (message.trim() !== '' || mediaFile) {
-                const messageElement = document.createElement('div');
-                messageElement.classList.add('message');
-                
-                // Adiciona texto da mensagem
-                if (message.trim() !== '') {
-                    messageElement.textContent = `${username}: ${message}`;
-                }
+  <section>
+    <h2>Objetivo</h2>
+    <p>Busco oportunidades para aplicar minha experiência na área de produção, ampliar conhecimentos em novas áreas e contribuir de forma eficiente para o crescimento da equipe e da empresa. Sou dedicado, aprendiz rápido e motivado a desenvolver novas competências, incluindo conhecimentos em tecnologia e desenvolvimento web.</p>
+  </section>
 
-                // Adiciona mídia se houver
-                if (mediaFile) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const mediaElement = document.createElement(mediaFile.type.startsWith('video') ? 'video' : 'img');
-                        mediaElement.src = e.target.result;
-                        mediaElement.classList.add('media');
-                        mediaElement.controls = mediaFile.type.startsWith('video');
-                        messageElement.appendChild(mediaElement);
-                    };
-                    reader.readAsDataURL(mediaFile);
-                }
+  <section>
+    <h2>Experiência Profissional</h2>
+    <h3>Lana Plast</h3>
+    <p>Auxiliar de Produção / Operador de Granulado e Alimentador</p>
+    <p><em>Período: 04/11/2022 a 16/01/2024</em></p>
+    <ul>
+      <li>Auxiliava na operação de máquinas de extrusão de PVC para tubos, forros e perfis.</li>
+      <li>Responsável pelo abastecimento de máquinas, alimentação da linha de produção e controle de qualidade.</li>
+      <li>Participava de tarefas de manutenção básica e organização do setor.</li>
+    </ul>
 
-                messagesContainer.appendChild(messageElement);
+    <h3>Top Cables</h3>
+    <p>Auxiliar e Operador de Máquinas Nível 3</p>
+    <p><em>Período: 20/01/2024 até atualmente (2025)</em></p>
+    <ul>
+      <li>Operava máquinas de produção de fios, cabos elétricos e PVC.</li>
+      <li>Responsável pelo nível 3 de operação, acompanhamento de processos e manutenção básica.</li>
+      <li>Contribuiu para a eficiência e qualidade da produção, buscando melhorias contínuas.</li>
+    </ul>
+  </section>
 
-                // Limpa os campos após enviar
-                document.getElementById('message').value = '';
-                mediaInput.value = '';
+  <section>
+    <h2>Formação Acadêmica</h2>
+    <p>Ensino Médio Incompleto</p>
+    <p>Manaus, Bairro Mauazinho, Porto da Ceasa Vila Nova</p>
+  </section>
 
-                // Configura um timer para remover a mensagem após 1 hora (3600000 ms)
-                setTimeout(() => {
-                    messagesContainer.removeChild(messageElement);
-                }, 3600000);
-            } else {
-                alert('Por favor, digite uma mensagem ou selecione um arquivo!');
-            }
-        });
-    </script>
+  <section>
+    <h2>Conhecimentos Técnicos e Habilidades</h2>
+    <ul>
+      <li>Operação de máquinas de extrusão (PVC)</li>
+      <li>Controle de qualidade</li>
+      <li>Trabalho em equipe</li>
+      <li>Alimentação de linha de produção</li>
+      <li>Aprendizado rápido e adaptação a novas funções</li>
+      <li>Conhecimento em HTML, CSS, JavaScript</li>
+      <li>Criador e hospedador de sites via GitHub e Termux</li>
+      <li>Curso de informática básica</li>
+    </ul>
+  </section>
+</div>
+
+<div class="buttons">
+  <a href="https://wa.me/92981279375" class="button" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <a href="mailto:ruille20@gmail.com" class="button">Email</a>
+  <a href="https://www.instagram.com/paython26588" class="button" target="_blank" rel="noopener noreferrer">Instagram</a>
+  <a href="https://www.facebook.com/share/1AqKdPXHwP/" class="button" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <button class="button button-pdf" onclick="gerarPDF()">Salvar como PDF</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+function gerarPDF() {
+  const elemento = document.getElementById('curriculo');
+  const pxPorMm = 96 / 25.4;
+  const alturaPx = elemento.offsetHeight;
+  const alturaMm = alturaPx / pxPorMm;
+
+  const opcoes = {
+    margin: 10,
+    filename: 'Curriculo-Ruille-Souza.pdf',
+    image: { type: 'jpeg', quality: 1 },
+    html2canvas: { scale: 2, scrollY: 0, windowWidth: document.body.scrollWidth },
+    jsPDF: { unit: 'mm', format: [210, alturaMm], orientation: 'portrait' }
+  };
+
+  html2pdf().from(elemento).set(opcoes).save();
+}
+</script>
+
 </body>
 </html>
